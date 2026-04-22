@@ -9,9 +9,6 @@ class MovieRepositoryImpl(
 
     override suspend fun getMovies() = api.getMovies()
 
-    override suspend fun getMovieCredits() = api.getCreditDetails()
-
-    override suspend fun getMovieReviews() = api.getReviews()
 }
 
 

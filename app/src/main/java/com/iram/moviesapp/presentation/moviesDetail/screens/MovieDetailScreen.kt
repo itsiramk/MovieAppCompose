@@ -1,4 +1,4 @@
-package com.iram.moviesapp.presentation.moviesDetail
+package com.iram.moviesapp.presentation.moviesDetail.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -31,6 +31,7 @@ import com.iram.moviesapp.presentation.movies.MovieViewModel
 
 @Composable
 fun MovieDetailScreen(
+    modifier: Modifier,
     movieId: Int?,
     navController: NavController,
     viewModel: MovieViewModel = hiltViewModel()
@@ -45,9 +46,7 @@ fun MovieDetailScreen(
     Column {
 
         Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(300.dp)
+            modifier = modifier.height(300.dp)
         ) {
 
             AsyncImage(
@@ -94,7 +93,7 @@ fun MovieDetailScreen(
         }
 
         MovieOverviewScreen(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(16.dp),
             movie = movie
         )
     }

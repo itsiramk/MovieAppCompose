@@ -7,7 +7,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.iram.moviesapp.presentation.movies.screens.MovieHomeScreen
-import com.iram.moviesapp.presentation.moviesDetail.MovieDetailScreen
+import com.iram.moviesapp.presentation.moviesDetail.screens.MovieDetailHomeScreen
+import com.iram.moviesapp.presentation.moviesDetail.screens.MovieDetailScreen
 
 @Composable
 fun AppNavGraph() {
@@ -19,7 +20,7 @@ fun AppNavGraph() {
             arguments = listOf(navArgument("movieId") { type = NavType.IntType })
         ) {
             val movieId = it.arguments?.getInt("movieId")
-            MovieDetailScreen(movieId = movieId, navController = navController)
+            MovieDetailHomeScreen(movieId = movieId, navController = navController)
         }
     }
 }

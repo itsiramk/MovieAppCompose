@@ -5,5 +5,6 @@ data class MovieDto(
     val title: String?,
     val poster_path: String?,
     val release_date: String?,
-    val overview: String?
+    val overview: String?,
+    val name: String?
 )

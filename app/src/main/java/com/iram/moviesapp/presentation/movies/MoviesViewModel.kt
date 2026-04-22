@@ -3,7 +3,6 @@ package com.iram.moviesapp.presentation.movies
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.iram.moviesapp.domain.usecase.GetMoviesUseCase
-import com.iram.moviesapp.domain.usecase.SearchMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,9 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MovieViewModel @Inject constructor(
-    private val getMoviesUseCase: GetMoviesUseCase,
-    private val searchMoviesUseCase: SearchMoviesUseCase
-) : ViewModel() {
+    private val getMoviesUseCase: GetMoviesUseCase) : ViewModel() {
 
     private val _state = MutableStateFlow<MovieUiState>(MovieUiState.Loading)
     val state = _state.asStateFlow()
@@ -27,8 +24,6 @@ class MovieViewModel @Inject constructor(
      */
 
     fun loadMovies() {
-        android.util.Log.d("VM", "loadMovies CALLED")  // 👈 MUST PRINT
-
         viewModelScope.launch {
             _state.value = MovieUiState.Loading
             try {

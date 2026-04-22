@@ -10,13 +10,6 @@ class GetMoviesUseCase @Inject constructor(
 ) {
     suspend fun getMoviesData(): List<Movie> {
         val response = repository.getMovies()
-        android.util.Log.d("Iram List", response.results.size.toString())
-        return response.toDomainList()
-    }
-
-    suspend fun getMovieCredits(): List<Movie> {
-        val response = repository.getMovies()
-        android.util.Log.d("Iram List", response.results.size.toString())
         return response.toDomainList()
     }
 }
