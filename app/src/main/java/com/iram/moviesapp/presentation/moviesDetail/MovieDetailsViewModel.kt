@@ -46,7 +46,7 @@ class MovieDetailsViewModel @Inject constructor(
             _reviewState.value = MovieReviewsUiState.Loading
             try {
                 val reviews = getMovieDetailsUseCase.getMovieReviews(movieId)
-                _reviewState.value = if (reviews.results.isNotEmpty()) {
+                _reviewState.value = if (reviews.results?.isNotEmpty() == true) {
                     MovieReviewsUiState.Success(reviews)
                 } else {
                     MovieReviewsUiState.Empty

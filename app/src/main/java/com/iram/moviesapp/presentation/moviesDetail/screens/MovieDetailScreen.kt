@@ -43,10 +43,10 @@ fun MovieDetailScreen(
         ?.find {
             it.id == movieId
         }
-    Column {
+    Column(modifier = modifier) {
 
         Box(
-            modifier = modifier.height(300.dp)
+            modifier = Modifier.fillMaxWidth().height(300.dp)
         ) {
 
             AsyncImage(

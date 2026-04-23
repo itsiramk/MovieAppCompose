@@ -15,6 +15,6 @@ interface MovieApi {
     @GET("movie/{id}/credits")
     suspend fun getCreditDetails(@Path("id") id: Int): MovieCredits
 
-    @GET("movie/{id}/credits")
+    @GET("movie/{id}/reviews")
     suspend fun getReviews(@Path("id") id: Int): MovieReviews
 }
